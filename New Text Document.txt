@@ -1,0 +1,7 @@
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+
+git remote set-url origin https://github.com/MohammedOss92/AbdallahProjectDigitalOcean.git
+git push -u origin master

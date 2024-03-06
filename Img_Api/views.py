@@ -1,0 +1,295 @@
+from django.contrib.admin.views.decorators import staff_member_required
+
+from django.shortcuts import render, redirect
+
+from .models import *
+from django.http import HttpResponse
+import requests
+import json
+from django.http.response import JsonResponse
+from .forms import *
+from .serializer import SnippetsDetailSerializer
+from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
+from django.http import JsonResponse
+from rest_framework.generics import ListAPIView
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.response import Response
+<<<<<<< HEAD
+from rest_framework.pagination import PageNumberPagination
+=======
+>>>>>>> 4d07779287d1b468c273939f4173e00c13a1ddae
+
+
+def index(request):
+    context = {}
+    return render(request, "index.html", context)
+
+
+@staff_member_required
+def create_img_type(request):
+    if request.method == 'POST':
+        img_type_name = request.POST.get('img_type_name')
+        new_image_value = request.POST.get('new_image', '1')
+
+        if img_type_name:
+            # Use the correct field name "ImgTypes" in the ImageType model
+            img_type, created = ImageType.objects.get_or_create(ImgTypes=img_type_name, new_img=new_image_value)
+
+            if created:
+                message = "Category created successfully."
+            else:
+                message = "Category already exists."
+
+            return render(request, 'add.html', {'message': message})
+
+    return render(request, 'add.html')
+
+
+@staff_member_required
+def aaa(request):
+    uploaded_image_url = None
+
+    if request.method == 'POST':
+        form = ImgsForm(request.POST, request.FILES)
+        if form.is_valid():
+            img_instance = form.save()
+            uploaded_image_url = request.build_absolute_uri(img_instance.pic.url)
+            img_instance.image_url = uploaded_image_url
+            img_instance.save()
+    else:
+        form = ImgsForm()
+
+    return render(request, 'img.html', {'form': form, 'uploaded_image_url': uploaded_image_url})
+
+
+@staff_member_required
+def add_img_withTypeType(request):
+    uploaded_image_urls = []
+
+    if request.method == 'POST':
+        form = ImgsForm(request.POST, request.FILES)
+        if form.is_valid():
+           
+            images = request.FILES.getlist('pic')
+
+            for image_file in images:
+                
+                img_instance = Imgs(pic=image_file)
+                
+                img_instance.ID_Type = form.cleaned_data['ID_Type']
+                
+                img_instance.save()
+
+                uploaded_image_url = request.build_absolute_uri(img_instance.pic.url)
+                
+                img_instance.image_url = uploaded_image_url
+                img_instance.save()
+
+                uploaded_image_urls.append(uploaded_image_url)
+
+    else:
+        form = ImgsForm()
+
+    return render(request, 'img.html', {'form': form, 'uploaded_image_urls': uploaded_image_urls})
+
+def imgtypes_api(request):
+    data = ImageType.objects.all().order_by('-id')
+    response = {
+
+        'ImgsTypesModel': list(data.values('id','ImgTypes','new_img'))
+        #'guests': dict(data.values('name','mobile'))
+
+    }
+
+    return JsonResponse(response,safe=False,json_dumps_params={'ensure_ascii': False})
+
+
+
+def imgsapi (request,id):
+    imgtype = ImageType.objects.get(id=id)
+    img=Imgs.objects.all().order_by('-id').filter(ID_Type_id=imgtype.id)
+
+    response = {
+        'ImgsModel':list(img.values('id','ID_Type_id','new_img','image_url','created_at','updated_at','new_msgs_text','created_at_new_msgs_text','updated_at_new_msgs_text','my_time_auto'))
+
+    }
+
+    return JsonResponse(response,safe=False,json_dumps_params={'ensure_ascii': False})
+
+def imgsapi_new(request):
+   img = Imgs.objects.filter(new_img=1).order_by('-id')
+    
+   response = {
+        'ImgsModel': list(img.values('id', 'ID_Type_id', 'new_img', 'image_url'))
+    }
+        
+   return JsonResponse(response, safe=False, json_dumps_params={'ensure_ascii': False})
+   
+def imgsapia(request, id):
+    # Ø§Ø³ØªÙ„Ø§Ù… Ù‚ÙŠÙ… Ø§Ù„Ù…Ø¹Ù„Ù…Ø§Øª Ù…Ù† Ø§Ù„Ø·Ù„Ø¨ (startIndex Ùˆ itemsPerPage)
+    start_index = int(request.GET.get('startIndex', 0))
+    items_per_page = int(request.GET.get('itemsPerPage', 10))
+
+    imgtype = ImageType.objects.get(id=id)
+    # Ø­Ø³Ø§Ø¨ Ù†Ø·Ø§Ù‚ Ø§Ù„ØµÙˆØ± Ø¨Ù†Ø§Ø¡Ù‹ Ø¹Ù„Ù‰ startIndex Ùˆ itemsPerPage
+    img = Imgs.objects.all().order_by('-id').filter(ID_Type_id=imgtype.id)[start_index:start_index + items_per_page]
+
+    response = {
+        'ImgsModel': list(img.values('id', 'ID_Type_id', 'new_img', 'image_url'))
+    }
+
+    return JsonResponse(response, safe=False, json_dumps_params={'ensure_ascii': False})
+
+def no_rest_Imgs_all (request):
+    img = Imgs.objects.all()
+    response = {
+        'ImgsModel': list(img.values('id', 'ID_Type_id', 'new_img', 'image_url'))
+    }
+
+    return JsonResponse(response,safe=False,json_dumps_params={'ensure_ascii': False})
+
+
+def imgsapi_pa(request, id):
+    imgtype = ImageType.objects.get(id=id)
+    img_list = Imgs.objects.filter(ID_Type_id=imgtype.id).order_by('-id').values('id', 'ID_Type_id', 'new_img', 'image_url')
+
+    
+    items_per_page = 10
+
+    paginator = Paginator(img_list, items_per_page)
+
+    page = request.GET.get('page')
+    try:
+        img_page = paginator.get_page(page)
+    except EmptyPage:
+        # Ø¥Ø°Ø§ ÙƒØ§Ù† Ø±Ù‚Ù… Ø§Ù„ØµÙØ­Ø© Ø®Ø§Ø±Ø¬ Ø§Ù„Ù†Ø·Ø§Ù‚ØŒ ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„ØªØ¹Ø§Ù…Ù„ Ù…Ø¹ Ø§Ù„Ø®Ø·Ø£ Ù‡Ù†Ø§
+        return JsonResponse({'error': 'Page not found'}, status=404)
+
+    response = {
+        'ImgsModel': list(img_page),
+        'current_page': img_page.number,
+        'total_pages': paginator.num_pages,
+    }
+
+    return JsonResponse(response, safe=False, json_dumps_params={'ensure_ascii': False})
+
+# class CustomPagination(PageNumberPagination):
+#     # page_size = 10  # ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#     def get_paginated_response(self, data):
+#         return Response({
+#             'total_pages': self.page.paginator.num_pages,
+#             'current_page': self.page.number,
+#             'count': self.page.paginator.count,
+#             'next': self.get_next_link(),
+#             'previous': self.get_previous_link(),
+#             'results': data
+#         })
+
+# class SnippetsListView(ListAPIView):
+#     serializer_class = SnippetsDetailSerializer
+#     # pagination_class = CustomPagination  # ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+#     def get_queryset(self):
+#         return Imgs.objects.all().order_by('-id')
+
+
+<<<<<<< HEAD
+class CustomPageNumberPagination(PageNumberPagination):
+    page_size = 12  # Ø¹Ø¯Ø¯ Ø§Ù„Ø¹Ù†Ø§ØµØ± ÙÙŠ Ø§Ù„ØµÙØ­Ø©
+=======
+
+class CustomPageNumberPagination(PageNumberPagination):
+    page_size = 12  # ÚÏÏ ÇáÚäÇÕÑ İí ÇáÕİÍÉ
+>>>>>>> 4d07779287d1b468c273939f4173e00c13a1ddae
+    page_size_query_param = 'page_size'
+
+    def get_paginated_response(self, data):
+        return Response({
+            'count': self.page.paginator.count,
+<<<<<<< HEAD
+            'total_pages': self.page.paginator.num_pages,  # Ø¹Ø¯Ø¯ Ø§Ù„ØµÙØ­Ø§Øª Ø§Ù„ÙƒÙ„ÙŠ
+            'current_page': self.page.number,  # Ø±Ù‚Ù… Ø§Ù„ØµÙØ­Ø© Ø§Ù„Ø­Ø§Ù„ÙŠØ©
+            'results': data
+        })
+
+
+class SnippetsListViewWhereidtypeidpa(ListAPIView):
+=======
+            'total_pages': self.page.paginator.num_pages,  # ÚÏÏ ÇáÕİÍÇÊ Çáßáí
+            'current_page': self.page.number,  # ÑŞã ÇáÕİÍÉ ÇáÍÇáíÉ
+            'results': data
+        })
+
+class SnippetsListView(ListAPIView):
+>>>>>>> 4d07779287d1b468c273939f4173e00c13a1ddae
+    serializer_class = SnippetsDetailSerializer
+    pagination_class = CustomPageNumberPagination
+
+    def get_queryset(self):
+<<<<<<< HEAD
+        # ÇÓÊÎÑÇÌ ŞíãÉ ID_Type_id ãä kwargs
+        id_type_id = self.kwargs.get('ID_Type_id')
+
+        # Şã ÈÊÕİíÉ ÇáÇÓÊÚáÇã ÈäÇÁğ Úáì ID_Type_id æÇÓÊÈÚÇÏ new_msgs_text=1
+        queryset = Imgs.objects.filter(ID_Type_id=id_type_id).exclude(new_msgs_text=1).order_by('-id')
+
+        return queryset
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+
+=======
+        # ÇÓÊÎÏã filter ÈÏáÇğ ãä exclude
+        return Nokat.objects.filter(new_msgs_text=1).order_by('-id')
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+>>>>>>> 4d07779287d1b468c273939f4173e00c13a1ddae
+        page = self.paginate_queryset(queryset)
+
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+<<<<<<< HEAD
+            return self.get_paginated_response({"ImgsModel": serializer.data})
+
+        serializer = self.get_serializer(queryset, many=True)
+        return Response({"ImgsModel": serializer.data})
+
+=======
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(queryset, many=True)
+        # ÇÓÊÎÏã super ááÍÕæá Úáì ÇáÇÓÊÌÇÈÉ ãä ÇáİÆÉ ÇáÃã
+        return super().list(request, *args, **kwargs, data={"NokatsModel": serializer.data})
+>>>>>>> 4d07779287d1b468c273939f4173e00c13a1ddae
+
+
+def send_notification_page(request):
+    return render(request, 'send_notification.html')
+
+def send_notification(request):
+    if request.method == 'POST':
+        url = 'https://fcm.googleapis.com/fcm/send'
+        headers = {
+            'Authorization': 'key=AAAAhqrLFCo:APA91bEND1dC-5LlVFxsOz6TmpNVDjb8Op1_i2kO-cLqJpV8pC4jiGgElB8eI2IPSw1U-G-c9HiBRQiCU57ItT5J5vM-abCdS9FHAVSuhZTmAZhzgX2d1SQggKN9qJJnLmDIH115lY7o',
+            # 'Authorization': 'key=AAAAPgSHYpA:APA91bGqy9XXlDnP9KoD05LYVTeXSlHICeFupGYZpL4QWY0XkZ8kpBuNaM1qf3wvkY5JqdGJuVk3Wu3Q3GmLs4_Qg3ntwH3LLcZqEZ3T-ycXviqFDSb7ap-iX2JlIahMyFHq07CwgD1k',
+            'Content-Type': 'application/json'
+        }
+        payload = {
+            'to': '/topics/alert',
+            'notification': {
+                'title': request.POST.get('title', ''),
+                'body': request.POST.get('body', '')
+            },
+            'data': {
+                'data': 'get',
+                'pranay': 'pranay',
+                'image': 'https://www.webrooper.com/androiddb/uploads/12.jpeg',
+                'tag': 'image'
+            }
+        }
+        response = requests.post(url, headers=headers, data=json.dumps(payload))
+        return HttpResponse(response.text)
+    else:
+        return HttpResponse('Method Not Allowed')
+
