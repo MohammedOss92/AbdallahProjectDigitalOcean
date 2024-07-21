@@ -7,21 +7,33 @@ import os
 
 
 # Create your models here.
-class Nokat(models.Model):
-    NokatTypes = models.CharField(max_length=1000, null=True)
-    new_nokat = models.CharField(max_length=2,default=1)
-    NokatName = models.CharField(max_length=1000, null=True)
-    created_at = models.DateField(auto_now_add=True)
-    updated_at = models.DateField(auto_now=True)
-    new_msgs_text = models.CharField(max_length=2, null=True, default=1)
+
+class NokatType(models.Model):
+    NoktTypes = models.CharField(max_length=100, null=True)
+    new_Nokat = models.CharField(max_length=2, default="1")
+    new_Nokat_show = models.CharField(max_length=2, default="0")
     created_at_new_msgs_text = models.DateField(null=True)
     updated_at_new_msgs_text = models.DateField(null=True)
     my_time_auto = models.TimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.NoktTypes  
+
+
+class Nokat(models.Model):
+    ID_Type = models.ForeignKey(NokatType, null=True, on_delete=models.SET_NULL)
+    new_nokat = models.IntegerField(default=1) 
+    NokatName = models.CharField(max_length=1000, null=True)
+    created_at = models.DateField(auto_now_add=True)
+    updated_at = models.DateField(auto_now=True)
+    new_msgs_show = models.IntegerField(default=0)  
+    created_at_new_msgs_text = models.DateField(null=True)
+    updated_at_new_msgs_text = models.DateField(null=True)
+    my_time_auto = models.TimeField(auto_now_add=True)
+    
     def __str__(self):
         return self.NokatName
-
-
-
+#    NokatTypes = models.CharField(max_length=1000, null=True)
 
 class ImagesNokat(models.Model):
     #new_nokat = models.CharField(max_length=2, null=True, choices=(('0', '0'), ('1', '1')))
@@ -41,7 +53,7 @@ class ImagesNokat(models.Model):
 
 @receiver(post_init, sender=ImagesNokat)
 def create_nokat_folder(sender, instance, **kwargs):
-    # ÇáÊÃßÏ ãä Ãä ÇáãÌáÏ ÛíÑ ãæÌæÏ ÈÇáİÚá
+    # Ø§Ù„ØªØ£ÙƒØ¯ Ù…Ù† Ø£Ù† Ø§Ù„Ù…Ø¬Ù„Ø¯ ØºÙŠØ± Ù…ÙˆØ¬ÙˆØ¯ Ø¨Ø§Ù„ÙØ¹Ù„
     if not os.path.exists('media/nokat'):
-        # ÅäÔÇÁ ÇáãÌáÏ ÅĞÇ áã íßä ãæÌæÏÇğ
+        # Ø¥Ù†Ø´Ø§Ø¡ Ø§Ù„Ù…Ø¬Ù„Ø¯ Ø¥Ø°Ø§ Ù„Ù… ÙŠÙƒÙ† Ù…ÙˆØ¬ÙˆØ¯Ø§Ù‹
         os.makedirs('media/nokat')    
