@@ -20,21 +20,66 @@ from rest_framework.parsers import MultiPartParser
 from .forms import ImgsFormss
 from rest_framework.decorators import api_view
 import logging
+from rest_framework.views import APIView
 
 # Create your views here.
 
 
+class generics_list_msgstypes(generics.ListCreateAPIView):
+    queryset = NokatType.objects.all()
+    serializer_class = NokatTypesSerializer
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAuthenticated]
 
-class CustomPageNumberPagination(PageNumberPagination):
-    page_size = 12  # ÚÏÏ ÇáÚäÇÕÑ Ýí ÇáÕÝÍÉ
+class generics_list_Nokat(generics.ListCreateAPIView):
+    queryset = Nokat.objects.all()
+    serializer_class = SnippetsDetailSerializer
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAuthenticated]
+###############
+class CustomPageNokatType(PageNumberPagination):
+    page_size = 12  # ?II C???C?? ?? C????E
     page_size_query_param = 'page_size'
 
     def get_paginated_response(self, data):
         return Response({
             'count': self.page.paginator.count,
-            'total_pages': self.page.paginator.num_pages,  # ÚÏÏ ÇáÕÝÍÇÊ Çáßáí
-            'current_page': self.page.number,  # ÑÞã ÇáÕÝÍÉ ÇáÍÇáíÉ
-            'results': {"NokatModel": data}  # ÊÚÏíá åäÇ áæÖÚ "NokatModel" ÊÍÊ "results"
+            'total_pages': self.page.paginator.num_pages,  # ?II C????CE C????
+            'current_page': self.page.number,  # ??? C????E C??C??E
+            'results': {"NokatTypeModel": data}  # E?I?? ??C ???? "NokatModel" E?E "results"
+        })
+
+
+class SnippetsListViewsNokatType(ListAPIView):
+    serializer_class = NokatTypesSerializer
+    pagination_class = CustomPageNokatType
+    
+    def get_queryset(self):
+        # C?EII? exclude ?C?EE?CI C????CE C?E? E?E?? ??? new_msgs_text E???E 1
+        return NokatType.objects.exclude(new_Nokat_show=1)
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+        page = self.paginate_queryset(queryset)
+
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(queryset, many=True)
+        return Response({"NokatTypeModel": serializer.data})
+###############
+
+class CustomPageNumberPagination(PageNumberPagination):
+    page_size = 12  # ?II C???C?? ?? C????E
+    page_size_query_param = 'page_size'
+
+    def get_paginated_response(self, data):
+        return Response({
+            'count': self.page.paginator.count,
+            'total_pages': self.page.paginator.num_pages,  # ?II C????CE C????
+            'current_page': self.page.number,  # ??? C????E C??C??E
+            'results': {"NokatModel": data}  # E?I?? ??C ???? "NokatModel" E?E "results"
         })
 
 
@@ -43,8 +88,8 @@ class SnippetsListViews(ListAPIView):
     pagination_class = CustomPageNumberPagination
     
     def get_queryset(self):
-        # ÇÓÊÎÏã exclude áÇÓÊÈÚÇÏ ÇáÓÌáÇÊ ÇáÊí ÊÍÊæí Úáì new_msgs_text ÈÞíãÉ 1
-        return Nokat.objects.exclude(new_msgs_text=1).order_by('-id')
+        # C?EII? exclude ?C?EE?CI C????CE C?E? E?E?? ??? new_msgs_text E???E 1
+        return Nokat.objects.exclude(new_msgs_show=1).order_by('-id')
 
     def list(self, request, *args, **kwargs):
         queryset = self.get_queryset()
@@ -57,15 +102,6 @@ class SnippetsListViews(ListAPIView):
         serializer = self.get_serializer(queryset, many=True)
         return Response({"NokatModel": serializer.data})
 
-    
-
-class generics_list_Nokat(generics.ListCreateAPIView):
-    queryset = Nokat.objects.all()
-    serializer_class = SnippetsDetailSerializer
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
-
-
 class generics_pk_Nokat(generics.RetrieveUpdateDestroyAPIView):
     queryset = Nokat.objects.all()
     serializer_class = SnippetsDetailSerializer
@@ -74,6 +110,48 @@ class generics_pk_Nokat(generics.RetrieveUpdateDestroyAPIView):
 
 
 
+
+################
+class CustomPageNokat(PageNumberPagination):
+    page_size = 12  # ط¹ط¯ط¯ ط§ظ„ط¹ظ†ط§طµط± ظپظٹ ط§ظ„طµظپط­ط©
+    page_size_query_param = 'page_size'
+
+    def get_paginated_response(self, data):
+        return Response({
+            'count': self.page.paginator.count,
+            'total_pages': self.page.paginator.num_pages,  # ط¹ط¯ط¯ ط§ظ„طµظپط­ط§طھ ط§ظ„ظƒظ„ظٹ
+            'current_page': self.page.number,  # ط±ظ‚ظ… ط§ظ„طµظپط­ط© ط§ظ„ط­ط§ظ„ظٹط©
+            'results': data
+        })
+
+
+class SnippetsNokatWhereTID(ListAPIView):
+    serializer_class = SnippetsDetailSerializer
+    pagination_class = CustomPageNokat
+    
+    def get_queryset(self):
+        # استخراج قيمة ID_Type_id من kwargs
+        id_type_id = self.kwargs.get('ID_Type_id')
+
+        # قم بتصفية الاستعلام بناءً على ID_Type_id واستبعاد new_msgs_text=1
+        queryset = Nokat.objects.filter(ID_Type_id=id_type_id).exclude(new_msgs_show=1).order_by('-id')
+
+        return queryset
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+
+        page = self.paginate_queryset(queryset)
+
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response({"NokatModel": serializer.data})
+
+        serializer = self.get_serializer(queryset, many=True)
+        return Response({"NokatModel": serializer.data})
+
+
+#####
 @staff_member_required
 def add_image_nokats(request):
     uploaded_image_urls = []
@@ -94,6 +172,7 @@ def add_image_nokats(request):
 
     return render(request, 'aa/addimgs.html', {'form': form, 'uploaded_image_urls': uploaded_image_urls})
 
+@staff_member_required
 def add_image_nokat(request):
     uploaded_image_urls = []
 
@@ -124,17 +203,23 @@ class generics_pk_imgNokat(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAuthenticated]
 
 
+class ImageCountView(APIView):
+
+    def get(self, request, *args, **kwargs):
+        image_count = ImagesNokat.objects.filter(img_show=0).count()
+        return Response({"total_images": image_count})
 
 class CustomPageNumberPagination(PageNumberPagination):
-    page_size = 12  # ÚÏÏ ÇáÚäÇÕÑ Ýí ÇáÕÝÍÉ
+    page_size = 12  # عدد العناصر في الصفحة
     page_size_query_param = 'page_size'
-
+    
     def get_paginated_response(self, data):
         return Response({
             'count': self.page.paginator.count,
-            'total_pages': self.page.paginator.num_pages,  # ÚÏÏ ÇáÕÝÍÇÊ Çáßáí
-            'current_page': self.page.number,  # ÑÞã ÇáÕÝÍÉ ÇáÍÇáíÉ
-            'results': {"ImgsNokatModel": data}  # ÊÚÏíá åäÇ áæÖÚ "NokatModel" ÊÍÊ "results"
+            'total_pages': self.page.paginator.num_pages,  # عدد الصفحات الكلي
+            'current_page': self.page.number,  # رقم الصفحة الحالية
+
+            'results': {"ImgsNokatModel": data}  # تعديل هنا لوضع "NokatModel" تحت "results"
         })
 
 
@@ -143,7 +228,7 @@ class SnippetsListView(ListAPIView):
     pagination_class = CustomPageNumberPagination
     
     def get_queryset(self):
-        # ÇÓÊÎÏã exclude áÇÓÊÈÚÇÏ ÇáÓÌáÇÊ ÇáÊí ÊÍÊæí Úáì new_msgs_text ÈÞíãÉ 1
+        # استخدم exclude لاستبعاد السجلات التي تحتوي على new_msgs_text بقيمة 1
         return ImagesNokat.objects.exclude(img_show=1).order_by('-id')
 
     def list(self, request, *args, **kwargs):
@@ -157,6 +242,17 @@ class SnippetsListView(ListAPIView):
         serializer = self.get_serializer(queryset, many=True)
         return Response({"ImgsNokatModel": serializer.data})
 
+def imgsapi (request,id):
+    imgtype = ImageType.objects.get(id=id)
+    img=Imgs.objects.exclude(new_msgs_text='1').order_by('-id').filter(ID_Type_id=imgtype.id)
+
+    response = {
+        'ImgsModel':list(img.values('id','ID_Type_id','new_img','image_url','created_at','updated_at','new_msgs_text','created_at_new_msgs_text','updated_at_new_msgs_text','my_time_auto'))
+
+    }
+
+    return JsonResponse(response,safe=False,json_dumps_params={'ensure_ascii': False})
+
 def imgsNokatapi(request):
    img = ImagesNokat.objects.exclude(img_show=1).order_by('-id')
    
@@ -166,3 +262,37 @@ def imgsNokatapi(request):
     }
         
    return JsonResponse(response, safe=False, json_dumps_params={'ensure_ascii': False})
+
+
+class CustomPageNumberPagination(PageNumberPagination):
+    page_size = 12  # عدد العناصر في الصفحة
+    page_size_query_param = 'page_size'
+
+    def get_paginated_response(self, data):
+        return Response({
+            'count': self.page.paginator.count,
+            'total_pages': self.page.paginator.num_pages,  # عدد الصفحات الكلي
+            'current_page': self.page.number,  # رقم الصفحة الحالية
+            'results': {"ImgsNokatModel": data}  # تعديل هنا لوضع "NokatModel" تحت "results"
+        })
+
+class SnippetsListViewnew(ListAPIView):
+    serializer_class = SnippetsDetailSerializers
+    pagination_class = CustomPageNumberPagination
+
+    def get_queryset(self):
+        # استخدم exclude لاستبعاد السجلات التي تحتوي على img_show بقيمة 1
+        # واستخدم filter لتحديد السجلات التي تحتوي على new_img بقيمة 1
+        return ImagesNokat.objects.filter(new_img=1).exclude(img_show=1).order_by('-id')
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+        page = self.paginate_queryset(queryset)
+
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(queryset, many=True)
+        return Response({"ImgsNokatModel": serializer.data})
+
