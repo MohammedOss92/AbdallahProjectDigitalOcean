@@ -3,5 +3,6 @@ from .models import *
 
 # Register your models here.
 
+admin.site.register(NokatType)
 admin.site.register(Nokat)
-#admin.site.register(ImagesNokat)
+admin.site.register(ImagesNokat)
