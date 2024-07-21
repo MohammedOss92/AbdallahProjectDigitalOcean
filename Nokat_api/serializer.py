@@ -4,15 +4,17 @@ from Nokat_api.models import *
 
 
 
-class SnippetsDetailSerializer(serializers.ModelSerializer):
 
+class NokatTypesSerializer (serializers.ModelSerializer):
+    class Meta:
+        model = NokatType
+        fields = '__all__'
+
+
+class SnippetsDetailSerializer(serializers.ModelSerializer):
   class Meta:
     model = Nokat
-    fields = '__all__'
-    # fields = ['id', 'ID_Type', 'pic', 'new_img','image_url']
-
-
-    
+    fields = '__all__'    
 
 
 class SnippetsDetailSerializers(serializers.ModelSerializer):
