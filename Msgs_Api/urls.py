@@ -16,8 +16,6 @@ urlpatterns = [
     path('genericsmsgs/', views.generics_msgs.as_view()),
     path('generics_pk_msgs/<int:pk>', views.generics_pk_msgs.as_view()),
     #2
-    path('msgtypes_api/', views.msgtypes_api),
-    path('msgsapi/<int:id>' , views.msgsapi),
     path('send-notification/', views.send_notification, name='send-notification'),
     path('send-notification-page/', views.send_notification_page, name='send-notification-page'),
         ####################
