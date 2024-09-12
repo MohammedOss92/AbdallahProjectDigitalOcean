@@ -72,12 +72,27 @@ class AllInfoRelatedToIDView(generics.RetrieveAPIView):
         })
     
 
+
     
+#class generics_msgs(generics.ListCreateAPIView):
+#    queryset = Messages.objects.all()
+#    serializer_class = MessegasSerializer
+#    authentication_classes = [BasicAuthentication]
+#    permission_classes = [IsAuthenticated]
+
+class CustomPageNumberPagination2(PageNumberPagination):
+    page_size = 10
+    page_size_query_param = 'page_size'
+    max_page_size = 100
+
 class generics_msgs(generics.ListCreateAPIView):
     queryset = Messages.objects.all()
     serializer_class = MessegasSerializer
     authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]
+    pagination_class = CustomPageNumberPagination2
+
+
     
 
 #6.2 get put and delete 
