@@ -59,12 +59,12 @@ class AllInfoRelatedToIDView(generics.RetrieveAPIView):
     permission_classes = [IsAuthenticated]
         
     def retrieve(self, request, *args, **kwargs):
-        id = self.kwargs.get('id')  # ������ ��� ���� �� ������� URL
-        msgtype = MeesageType.objects.get(id=id)  # ������ ��� ��� MessageType �������� ������
-        related_messages = Messages.objects.filter(ID_Type_id=msgtype.id)  # ������ ��� ������� �������� �� ���� Messages
+        id = self.kwargs.get('id')  #                            URL
+        msgtype = MeesageType.objects.get(id=id)  #                MessageType                
+        related_messages = Messages.objects.filter(ID_Type_id=msgtype.id)  #                                     Messages
         
-        msgtype_serializer = MsgsTypesSerializer(msgtype)  # ����� ��� MessageType ��� ������ ����� �������
-        messages_serializer = MessegasSerializer(related_messages, many=True)  # ����� ������� �� Messages ��� ������ ����� �������
+        msgtype_serializer = MsgsTypesSerializer(msgtype)  #           MessageType                         
+        messages_serializer = MessegasSerializer(related_messages, many=True)  #                  Messages                         
         
         return Response({
             'message_type_info': msgtype_serializer.data,
@@ -89,20 +89,10 @@ class generics_pk_msgs(generics.RetrieveUpdateDestroyAPIView):
    
 
 
-#2 model data default djanog without rest
-def msgtypes_api(request):
-    data = MeesageType.objects.all()
-    response = {
 
-        'MsgsTypesModel': list(data.values('id','MsgTypes','new_msg','new_msgs_text','created_at_new_msgs_text','updated_at_new_msgs_text','my_time_auto'))
-        #'guests': dict(data.values('name','mobile'))
-
-    }
-
-    return JsonResponse(response,safe=False,json_dumps_params={'ensure_ascii': False})
 
 def msgtypes_api_show(request):
-    # ������� ������ ���� ����� ��� new_msgs_text ����� 0
+    #                               new_msgs_text       0
     data = MeesageType.objects.exclude(new_msgs_text=1).values(
         'id', 'MsgTypes', 'new_msg', 'new_msgs_text', 'created_at_new_msgs_text', 'updated_at_new_msgs_text','my_time_auto'
     )
@@ -114,23 +104,13 @@ def msgtypes_api_show(request):
     return JsonResponse(response, safe=False, json_dumps_params={'ensure_ascii': False})
 
 
-def msgsapi (request,id):
-    msgtype = MeesageType.objects.get(id=id)
-    msg=Messages.objects.all().filter(ID_Type_id=msgtype.id)
-
-    response = {
-        'MsgsModel':list(msg.values('id','MessageName','new_msgs','ID_Type_id','created_at','updated_at','new_msgs_text','created_at_new_msgs_text','updated_at_new_msgs_text','my_time_auto'))
-
-    }
-
-    return JsonResponse(response,safe=False,json_dumps_params={'ensure_ascii': False})
 
 
 
 def msgsapi_show(request, id):
     msgtype = MeesageType.objects.get(id=id)
     
-    # ������� ������ ������� ����� ���� new_msgs_text �� 0
+    #                                   new_msgs_text    0
     msg = Messages.objects.exclude(new_msgs_text='1').filter(ID_Type_id=msgtype.id)
 
     response = {
@@ -222,5 +202,3 @@ def send_notification(request):
         return HttpResponse(response.text)
     else:
         return HttpResponse('Method Not Allowed')
-
-
