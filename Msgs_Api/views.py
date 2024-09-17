@@ -217,3 +217,81 @@ def send_notification(request):
         return HttpResponse(response.text)
     else:
         return HttpResponse('Method Not Allowed')
+###################################
+
+class CustomPageMeesageTypess(PageNumberPagination):
+    page_size = 12  # ?II C???C?? ?? C????E
+    page_size_query_param = 'page_size'
+
+    def get_paginated_response(self, data):
+        return Response({
+            'count': self.page.paginator.count,
+            'total_pages': self.page.paginator.num_pages,  # ?II C????CE C????
+            'current_page': self.page.number,  # ??? C????E C??C??E
+            'results': {"MsgsTypesModel": data}  # E?I?? ??C ???? "NokatModel" E?E "results"
+        })
+
+
+class SnippetsListViewsMsgssType(ListAPIView):
+    serializer_class = MsgsTypesSerializer
+    pagination_class = CustomPageMeesageTypess
+    
+    def get_queryset(self):
+        # C?EII? exclude ?C?EE?CI C????CE C?E? E?E?? ??? new_msgs_text E???E 1
+        return MeesageType.objects.exclude(new_msgs_text=1)
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+        page = self.paginate_queryset(queryset)
+
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(queryset, many=True)
+        return Response({"MsgsTypesModel": serializer.data})
+
+
+class CustomPageMessagess(PageNumberPagination):
+    page_size = 12  # عدد العناصر في الصفحة
+    page_size_query_param = 'page_size'
+
+    def get_paginated_response(self, data):
+        return Response({
+            'count': self.page.paginator.count,  # إجمالي عدد العناصر
+            'total_pages': self.page.paginator.num_pages,  # إجمالي عدد الصفحات
+            'current_page': self.page.number,  # رقم الصفحة الحالية
+            'results': data  # البيانات في الصفحة الحالية
+        })
+
+
+class SnippetsMsgssWhereTID(ListAPIView):
+    serializer_class = MessegasSerializer
+    pagination_class = CustomPageMessagess
+    
+    def get_queryset(self):
+        # استخراج قيمة ID_Type_id من المعاملات
+        id_type_id = self.kwargs.get('ID_Type_id')
+
+        # تصفية الرسائل بناءً على ID_Type_id واستبعاد الرسائل التي تحتوي على new_msgs_text = 1
+        queryset = Messages.objects.filter(ID_Type_id=id_type_id).exclude(new_msgs_text=1).order_by('-id')
+
+        return queryset
+
+    def list(self, request, *args, **kwargs):
+        # الحصول على الرسائل المصفاة
+        queryset = self.get_queryset()
+
+        # تطبيق التصفح على النتائج
+        page = self.paginate_queryset(queryset)
+
+        if page is not None:
+            # إذا كانت هناك صفحات متعددة، إعادة البيانات مع تفاصيل التصفح
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response({"MsgsModel": serializer.data})
+
+        # إذا كانت النتائج كلها في صفحة واحدة، إرجاعها مباشرة
+        serializer = self.get_serializer(queryset, many=True)
+        return Response({"MsgsModel": serializer.data})
+
+
