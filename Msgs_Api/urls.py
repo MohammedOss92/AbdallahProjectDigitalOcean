@@ -24,9 +24,10 @@ urlpatterns = [
     path('msgsapishow/<int:id>' , views.msgsapi_show),
     path('msgtypes_api_show/', views.msgtypes_api_show),
     path('snippetsids/<int:ID_Type_id>/', SnippetsListViewWhereidtypeidpa.as_view(), name='snippets-detail'),
-
-
-    
+    path('msgstypespa/', SnippetsListViewsMsgssType.as_view(), name='snippets-list'),
+    path('msgsapiidspa/<int:ID_Type_id>', SnippetsMsgssWhereTID.as_view(), name='snippets-list'),
+   
+  
 
 
     
