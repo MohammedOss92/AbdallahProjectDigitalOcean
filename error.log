@@ -1,0 +1,615 @@
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: 'softsec.science'. You may need to add 'softsec.science' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'softsec.science'. You may need to add 'softsec.science' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: 'ka.deeomail.com'. You may need to add 'ka.deeomail.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'ka.deeomail.com'. You may need to add 'ka.deeomail.com' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: 'admin.scrmchampion.com'. You may need to add 'admin.scrmchampion.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'admin.scrmchampion.com'. You may need to add 'admin.scrmchampion.com' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'admin.scrmchampion.com'. You may need to add 'admin.scrmchampion.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'admin.scrmchampion.com'. You may need to add 'admin.scrmchampion.com' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Internal Server Error: /social/profile/8/
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/root/Abdallah_Project3/social/views.py", line 338, in get
+    return render(request, 'social/profile.html', context)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/loader_tags.py", line 208, in render
+    return template.render(context)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/base.py", line 177, in render
+    return self._render(context)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'profile' with arguments '('',)' not found. 1 pattern(s) tried: ['social/profile/(?P<pk>[0-9]+)/\\Z']
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: 'www.haiwang.app'. You may need to add 'www.haiwang.app' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.haiwang.app'. You may need to add 'www.haiwang.app' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'azenv.net'. You may need to add 'azenv.net' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'azenv.net'. You may need to add 'azenv.net' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '164.90.209.225:x'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '164.90.209.225:x'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: 'www.feijiji.com'. You may need to add 'www.feijiji.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.feijiji.com'. You may need to add 'www.feijiji.com' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.henduohao.com'. You may need to add 'www.henduohao.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.henduohao.com'. You may need to add 'www.henduohao.com' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: 'www.feijiji.com'. You may need to add 'www.feijiji.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.feijiji.com'. You may need to add 'www.feijiji.com' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: 'www.henduohao.com'. You may need to add 'www.henduohao.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.henduohao.com'. You may need to add 'www.henduohao.com' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: 'cuq4rtkg064341rc20dg.164.90.209.225'. You may need to add 'cuq4rtkg064341rc20dg.164.90.209.225' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'cuq4rtkg064341rc20dg.164.90.209.225'. You may need to add 'cuq4rtkg064341rc20dg.164.90.209.225' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Invalid HTTP_HOST header: 'cf.06151953.xyz'. You may need to add 'cf.06151953.xyz' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'cf.06151953.xyz'. You may need to add 'cf.06151953.xyz' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/root/Abdallah_Project3/env/lib/python3.8/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/run/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.

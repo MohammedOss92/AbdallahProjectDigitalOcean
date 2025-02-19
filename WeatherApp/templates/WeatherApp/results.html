@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Results</title>
+</head>
+
+<body>
+    <h1>Weather in {{ city_name }}, {{ city_country }}</h1>
+    <img src="https://openweathermap.org/img/wn/{{ icon }}@2x.png" alt="weather icon">
+    <img src="http://openweathermap.org/img/w/{{ icon }}.png" alt="Image">
+
+    <p>Wind: {{ wind }} m/s</p>
+    <p>Temperature: {{ temp }}°C</p>
+    <p>Description: {{ status }}</p>
+    <p>Date: {{ date }}</p>
+
+    <h2>Weather details for the coming days:</h2>
+    <ul>
+        <li>{{ date1 }}: <img src="https://openweathermap.org/img/wn/{{ icon1 }}@2x.png" alt="weather icon">
+            <img src="http://openweathermap.org/img/w/{{ icon }}.png" alt="Image">
+            {{temp_min1}}°C - {{ temp_max1 }}°C
+        </li>
+        <li>{{ date2 }}: <img src="https://openweathermap.org/img/wn/{{ icon2 }}@2x.png" alt="weather icon">
+            <img src="http://openweathermap.org/img/w/{{ icon }}.png" alt="Image">
+            {{temp_min2}}°C - {{ temp_max2 }}°C
+        </li>
+        <li>{{ date3 }}: <img src="https://openweathermap.org/img/wn/{{ icon3 }}@2x.png" alt="weather icon">
+            <img src="http://openweathermap.org/img/w/{{ icon }}.png" alt="Image">
+            {{temp_min3}}°C - {{ temp_max3 }}°C
+        </li>
+        <li>{{ date4 }}: <img src="https://openweathermap.org/img/wn/{{ icon4 }}@2x.png" alt="weather icon">
+            <img src="http://openweathermap.org/img/w/{{ icon }}.png" alt="Image">
+            {{temp_min4}}°C - {{ temp_max4 }}°C
+        </li>
+        <li>{{ date5 }}: <img src="https://openweathermap.org/img/wn/{{ icon5 }}@2x.png" alt="weather icon">
+            <img src="http://openweathermap.org/img/w/{{ icon }}.png" alt="Image">
+            {{temp_min5}}°C - {{ temp_max5 }}°C
+        </li>
+        <li>{{ date6 }}: <img src="https://openweathermap.org/img/wn/{{ icon6 }}@2x.png" alt="weather icon">
+            <img src="http://openweathermap.org/img/w/{{ icon }}.png" alt="Image">
+            {{temp_min6}}°C - {{ temp_max6 }}°C
+        </li>
+    </ul>
+
+    <a href="{% url 'input_form' %}">Return to Home Page</a>
+</body>
+
+</html>
+
+{%comment%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Results</title>
+</head>
+
+<body>
+    <h1>Weather in {{ city_name }}, {{ city_country }}</h1>
+    <p>Wind: {{ wind }} m/s</p>
+    <p>Temperature: {{ temp }}°C</p>
+    <p>Description: {{ status }}</p>
+    <p>Date: {{ date }}</p>
+    <!-- You can add more information if needed -->
+
+    <h2>Weather details

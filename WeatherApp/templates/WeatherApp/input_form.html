@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter City</title>
+</head>
+
+<body>
+    <h1>Enter City Name</h1>
+    <form method="POST" action="{% url 'res' %}"> <!-- Make sure to change 'result' to the correct URL name -->
+        {% csrf_token %}
+        <input type="text" name="city" required placeholder="City Name">
+        <button type="submit">Show Weather</button>
+    </form>
+</body>
+
+</html>
