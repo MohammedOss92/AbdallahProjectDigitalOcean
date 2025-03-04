@@ -1,0 +1,126 @@
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => console.log("Response:", data))
+  .catch(error => console.error("Error:", error));
+
+
+fetch("https://jsonplaceholder.typicode.com/posts", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    title: "foo",
+    body: "bar",
+    userId: 1,
+  }),
+})
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => console.log("Response:", data))
+  .catch(error => console.error("Error:", error));
+
+
+fetch("https://jsonplaceholder.typicode.com/posts/1", {
+  method: "PUT",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    id: 1,
+    title: "foo updated",
+    body: "bar updated",
+    userId: 1,
+  }),
+})
+  .then(response => response.json())
+  .then(data => console.log("Updated:", data))
+  .catch(error => console.error("Error:", error));
+
+
+fetch("https://jsonplaceholder.typicode.com/posts/1", {
+  method: "DELETE",
+})
+  .then(response => {
+    if (response.ok) {
+      console.log("Deleted successfully!");
+    } else {
+      console.error("Error during deletion:", response.statusText);
+    }
+  })
+  .catch(error => console.error("Error:", error));
+
+from django.http import JsonResponse
+
+class AddLike(LoginRequiredMixin, View):
+    def post(self, request, pk, *args, **kwargs):
+        post = Post.objects.get(pk=pk)
+
+        is_dislike = False
+        for dislike in post.dislikes.all():
+            if dislike == request.user:
+                is_dislike = True
+                break
+
+        if is_dislike:
+            post.dislikes.remove(request.user)
+
+        is_like = False
+        for like in post.likes.all():
+            if like == request.user:
+                is_like = True
+                break
+
+        if not is_like:
+            post.likes.add(request.user)
+            Notification.objects.create(
+                notification_type=1, 
+                from_user=request.user, 
+                to_user=post.author, 
+                post=post
+            )
+        else:
+            post.likes.remove(request.user)
+
+        return JsonResponse({'likes_count': post.likes.count(), 'is_liked': not is_like})
+
+
+<button id="like-btn" data-post-id="{{ post.id }}">
+    ?? <span id="like-count">{{ post.likes.count }}</span>
+</button>
+
+<script>
+document.getElementById('like-btn').addEventListener('click', function() {
+    let postId = this.getAttribute('data-post-id');
+
+    fetch(`/like/${postId}/`, {  // ÇÓÊÈÏá `like/` ÈãÓÇÑ `AddLike`
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': getCSRFToken(), // ÊÃßÏ ãä ÊÖãíä CSRF
+            'Content-Type': 'application/json'
+        },
+        credentials: 'same-origin'
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('like-count').textContent = data.likes_count;
+        this.classList.toggle('liked', data.is_liked); // ÊÛííÑ ãÙåÑ ÇáÒÑ ÅÐÇ Êã ÇáÅÚÌÇÈ
+    })
+    .catch(error => console.error('Error:', error));
+});
+
+// æÙíÝÉ ááÍÕæá Úáì CSRF Token
+function getCSRFToken() {
+    return document.cookie.split('; ').find(row => row.startsWith('csrftoken=')).split('=')[1];
+}
+</script>
+
