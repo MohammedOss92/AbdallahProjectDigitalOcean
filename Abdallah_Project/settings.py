@@ -102,7 +102,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware',  # ���� �� ����� ��� �����
+    'allauth.account.middleware.AccountMiddleware',  # ÊÃßÏ ãä ÅÖÇÝÉ åÐÇ ÇáÓØÑ
 ]
 
 ROOT_URLCONF = 'Abdallah_Project.urls'
@@ -144,17 +144,17 @@ WSGI_APPLICATION = 'Abdallah_Project.wsgi.application'
 #    }
 # }
 
-DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.postgresql',
-         'NAME': 'abdallah_db',
-         'USER': 'abdallah_user',
-         'PASSWORD':'abdallah_user',
-         'HOST' : 'localhost',
-         'PORT' : '5432',
-     }
- }
-
+#DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'abdallah_db',
+#         'USER': 'abdallah_user',
+#         'PASSWORD':'abdallah_user',
+#         'HOST' : 'localhost',
+ #        'PORT' : '5432',
+ #    }
+# }
+#postgresql://abdallah_db_user:uQvjpMHBsDvUyq6ZUo1nRjuA6bbM3bjb@dpg-cv4u5pvnoe9s73eqqs4g-a.oregon-postgres.render.com/abdallah_db
 
 
 # Password validation
@@ -196,16 +196,16 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 import os
-# ������ ������� ������� �� ���� static
+# áÊÌãíÚ ÇáãáÝÇÊ ÇáÓÇßäÉ Ýí ãÌáÏ static
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# ���� ������� �����
+# ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 MEDIA_URL = '/media/'
 MEDIA_ROOT = Path(BASE_DIR) / 'media'
 FILE_UPLOAD_HANDLERS = [
     'django.core.files.uploadhandler.MemoryFileUploadHandler',
     'django.core.files.uploadhandler.TemporaryFileUploadHandler',
 ]
-DATA_UPLOAD_MAX_MEMORY_SIZE = 209715200  # 200 ��������
+DATA_UPLOAD_MAX_MEMORY_SIZE = 209715200  # 200 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
