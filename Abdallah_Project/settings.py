@@ -154,7 +154,7 @@ WSGI_APPLICATION = 'Abdallah_Project.wsgi.application'
  #        'PORT' : '5432',
  #    }
 # }
-#postgresql://abdallah_db_user:uQvjpMHBsDvUyq6ZUo1nRjuA6bbM3bjb@dpg-cv4u5pvnoe9s73eqqs4g-a.oregon-postgres.render.com/abdallah_db
+postgresql://abdallah_db_user:uQvjpMHBsDvUyq6ZUo1nRjuA6bbM3bjb@dpg-cv4u5pvnoe9s73eqqs4g-a.oregon-postgres.render.com/abdallah_db
 
 
 # Password validation
